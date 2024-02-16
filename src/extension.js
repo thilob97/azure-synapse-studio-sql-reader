@@ -16,11 +16,11 @@ function activate(context) {
 					vscode.window.showInformationMessage('Das JSON-Format ist korrekt.');
 					originalJsonUri = document.uri;
 					if (utils.validationUtils.headerExists(document.getText())) {
-						vscode.window.showInformationMessage('Azure Synapse Studio SQL-Header erkannt.');
+						vscode.window.showInformationMessage('Azure Synapse Studio SQL-Header detected. Opening query in new tab.');
 						const sqlQueryWithComments = `${jsonContent.properties.content.query}`;
 						utils.openSqlTabUtils.openQueryInNewTab(sqlQueryWithComments);
 					} else {
-						vscode.window.showInformationMessage('Azure Synapse Studio SQL-Header nicht erkannt.');
+						vscode.window.showInformationMessage('No Azure Synapse Studio SQL-Header detected. Adding SQL-Header.');
 						const metaDataString = utils.headerGeneratorUtils.generateSqlComment(jsonContent, originalJsonUri);
 						const sqlQueryWithComments = `${metaDataString}\n\n${jsonContent.properties.content.query}`;
 						utils.openSqlTabUtils.openQueryInNewTab(sqlQueryWithComments);
