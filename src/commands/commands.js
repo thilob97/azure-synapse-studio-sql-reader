@@ -1,6 +1,6 @@
 const vscode = require('vscode');
-const { headerExists, isValidJsonFormat } = require('./analytics');
-const { openQueryInNewTab } = require('./parser');
+const { headerExists, isValidJsonFormat } = require('../utils/analytics');
+const { openQueryInNewTab } = require('../utils/parser');
 
 function cmdcheckSqlHeader() {
     const editor = vscode.window.activeTextEditor;

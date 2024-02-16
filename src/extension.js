@@ -1,8 +1,8 @@
 const vscode = require('vscode');
 const path = require('path');
-const commands = require('./src/commands');
-const { headerExists, isValidJsonFormat } = require('./src/analytics');
-const { openQueryInNewTab } = require('./src/parser');
+const commands = require('./commands/commands');
+const { headerExists, isValidJsonFormat } = require('./utils/analytics');
+const { openQueryInNewTab } = require('./utils/parser');
 
 let originalJsonUri;
 
