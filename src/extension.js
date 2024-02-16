@@ -26,10 +26,10 @@ function activate(context) {
 						utils.openSqlTabUtils.openQueryInNewTab(sqlQueryWithComments);
 					}
 				} else {
-					vscode.window.showErrorMessage('Das JSON-Format entspricht nicht dem erwarteten Format.');
+					vscode.window.showErrorMessage('Invalid JSON format.');
 				}
 			} catch (e) {
-				vscode.window.showErrorMessage('Fehler beim Parsen der JSON-Datei.');
+				vscode.window.showErrorMessage('Error parsing JSON file: ' + e.message);
 			}
 		}
 	});
@@ -56,7 +56,7 @@ function activate(context) {
 			if (metadata && metadata.originalFilePath) {
 				// Aktualisiere das ursprüngliche JSON-Dokument mit den neuen Informationen
 				utils.parserUtils.updateJsonFileWithSqlQuery(metadata, query).catch(err => {
-					vscode.window.showErrorMessage('Fehler beim Aktualisieren der JSON-Datei: ' + err.message);
+					vscode.window.showErrorMessage('Error: ' + err.message);
 				});
 			}
 		}
