@@ -1,8 +1,8 @@
 {
   "name": "azure-synapse-studio-sql",
-  "displayName": "azure-synapse-studio-sql",
+  "displayName": "Synapse SQL JSON reader",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.21",
   "engines": {
     "vscode": "^1.86.0"
   },
@@ -45,5 +45,6 @@
     "type": "git",
     "url": "https://github.com/thilob97/azure-synapse-studio-sql-reader"
   },
-  "publisher": "ThiloBarth"
+  "publisher": "ThiloBarth",
+  "icon": "./src/logo.png"
 }
