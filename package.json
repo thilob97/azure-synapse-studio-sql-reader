@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onLanguage:json"
   ],
   "main": "./extension.js",
   "contributes": {
@@ -25,24 +25,7 @@
         "title": "Open Query in New Tab",
         "category": "Synapse SQL Parser"
       }
-    ],
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "myExtension",
-          "title": "Meine Erweiterung",
-          "icon": "images/myExtensionIcon.svg"
-        }
-      ]
-    },
-    "views": {
-      "myExtension": [
-        {
-          "id": "myCustomView",
-          "name": "Ansicht meiner Erweiterung"
-        }
-      ]
-    }
+    ]
   },
   "scripts": {
     "lint": "eslint .",
@@ -57,5 +40,10 @@
     "typescript": "^5.3.3",
     "@vscode/test-cli": "^0.0.4",
     "@vscode/test-electron": "^2.3.9"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thilob97/azure-synapse-studio-sql-reader"
+  },
+  "publisher": "ThiloBarth"
 }
