@@ -38,6 +38,8 @@ function activate(context) {
 	vscode.commands.registerCommand('extension.checkSqlHeader', commands.cmdCheckSqlHeader);
 	// Registriere den Befehl "extension.openQueryInNewTab"
 	vscode.commands.registerCommand('extension.openQueryInNewTab', commands.cmdOpenQueryInNewTab);
+	// Registriere den Befehl "extension.saveToJson"
+	vscode.commands.registerCommand('extension.saveToJson', commands.cmdSaveToJson);
 
 
 

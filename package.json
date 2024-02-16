@@ -7,7 +7,14 @@
     "vscode": "^1.86.0"
   },
   "categories": [
-    "Other"
+    "Azure"
+  ],
+  "tags": [
+    "Azure",
+    "Synapse",
+    "Studio",
+    "SQL",
+    "JSON"
   ],
   "activationEvents": [
     "onLanguage:json"
@@ -24,6 +31,25 @@
         "command": "extension.openQueryInNewTab",
         "title": "Open Query in New Tab",
         "category": "Synapse SQL Parser"
+      },
+      {
+        "command": "extension.saveToJson",
+        "title": "Save to JSON",
+        "category": "Synapse SQL Parser"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.openQueryInNewTab",
+        "key": "ctrl+alt+o",
+        "mac": "cmd+alt+o",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "extension.saveToJson",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s",
+        "when": "editorTextFocus"
       }
     ]
   },
