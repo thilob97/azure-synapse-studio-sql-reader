@@ -1,8 +1,8 @@
 const vscode = require('vscode');
 const path = require('path');
 const commands = require('./commands');
-const { headerExists, isValidJsonFormat } = require('./utils/analytics');
-const { openQueryInNewTab } = require('./utils/parser');
+const { headerExists, isValidJsonFormat } = require('./utils/validationUtils');
+const { openQueryInNewTab } = require('./utils/openSqlTabUtils');
 
 let originalJsonUri;
 
@@ -20,12 +20,12 @@ function activate(context) {
 					if (headerExists(document.getText())) {
 						vscode.window.showInformationMessage('Azure Synapse Studio SQL-Header erkannt.');
 						const sqlQueryWithComments = `${jsonContent.properties.content.query}`;
-						openQueryInNewTab(sqlQueryWithComments, jsonContent, originalJsonUri);
+						openQueryInNewTab(sqlQueryWithComments);
 					} else {
 						vscode.window.showInformationMessage('Azure Synapse Studio SQL-Header nicht erkannt.');
 						const metaDataString = generateSqlComment(jsonContent, originalJsonUri);
 						const sqlQueryWithComments = `${metaDataString}\n\n${jsonContent.properties.content.query}`;
-						openQueryInNewTab(sqlQueryWithComments, jsonContent, originalJsonUri);
+						openQueryInNewTab(sqlQueryWithComments);
 					}
 				} else {
 					vscode.window.showErrorMessage('Das JSON-Format entspricht nicht dem erwarteten Format.');

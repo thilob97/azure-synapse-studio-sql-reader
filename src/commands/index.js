@@ -1,5 +1,5 @@
-const cmdCheckSqlHeader = require('./cmdCheckSqlHeader');
-const cmdOpenQueryInNewTab = require('./cmdOpenQueryInNewTab');
+const cmdCheckSqlHeader = require('./fileCommands/cmdCheckSqlHeader');
+const cmdOpenQueryInNewTab = require('./fileCommands/cmdOpenQueryInNewTab');
 
 module.exports = {
     cmdCheckSqlHeader,
