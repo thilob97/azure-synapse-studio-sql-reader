@@ -2,7 +2,7 @@
   "name": "azure-synapse-studio-sql",
   "displayName": "Synapse SQL JSON reader",
   "description": "",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "engines": {
     "vscode": "^1.86.0"
   },
