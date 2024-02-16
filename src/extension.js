@@ -1,6 +1,6 @@
 const vscode = require('vscode');
 const path = require('path');
-const commands = require('./commands/commands');
+const commands = require('./commands');
 const { headerExists, isValidJsonFormat } = require('./utils/analytics');
 const { openQueryInNewTab } = require('./utils/parser');
 
@@ -37,7 +37,7 @@ function activate(context) {
 	});
 
 	// Registriere den Befehl "extension.checkSqlHeader"
-	vscode.commands.registerCommand('extension.checkSqlHeader', commands.cmdcheckSqlHeader);
+	vscode.commands.registerCommand('extension.checkSqlHeader', commands.cmdCheckSqlHeader);
 	// Registriere den Befehl "extension.openQueryInNewTab"
 	vscode.commands.registerCommand('extension.openQueryInNewTab', commands.cmdOpenQueryInNewTab);
 
