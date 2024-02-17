@@ -1,13 +1,14 @@
 const vscode = require('vscode');
 const commands = require('./commands');
 const utils = require('./utils');
+const provider = require('./providers');
 
 let originalJsonUri;
 
 /**
  * @param {vscode.ExtensionContext} context
  */
-function activate(context) {
+async function activate(context) {
 	let disposable = vscode.workspace.onDidOpenTextDocument(document => {
 		if (document.languageId === 'json' && document.uri.scheme === 'file') {
 			try {
@@ -40,12 +41,27 @@ function activate(context) {
 	vscode.commands.registerCommand('extension.openQueryInNewTab', commands.cmdOpenQueryInNewTab);
 	// Registriere den Befehl "extension.saveToJson"
 	vscode.commands.registerCommand('extension.saveToJson', commands.cmdSaveToJson);
+	// Registriere den Befehl "extension.setFolderPath"
+	vscode.commands.registerCommand('extension.setFolderPath', async () => {
+		return commands.cmdSetFolderPath(context)
+	});
+	// Registriere den Befehl "extension.getFolderPath"
+	vscode.commands.registerCommand('extension.getFolderPath', async () => {
+		return commands.cmdGetFolderPath(context)
+	});
 
+	const folderPath = await vscode.commands.executeCommand('extension.getFolderPath');
 
-
-	// Füge den Event-Listener zur Liste der Abonnements hinzu
+	if (folderPath) {
+		vscode.window.showInformationMessage('Folder path is set to: ' + folderPath);
+		const folderTreeDataProvider = new provider.folderTreeDataProvider(folderPath);
+		vscode.window.createTreeView('myFolderTreeView', {
+			treeDataProvider: folderTreeDataProvider
+		});
+	}
 
 	context.subscriptions.push(disposable);
+
 
 	// Registriere einen Event-Listener, der auf das Speichern von Dokumenten reagiert
 	let saveListener = vscode.workspace.onDidSaveTextDocument(document => {
