@@ -25,17 +25,27 @@
       {
         "command": "extension.checkSqlHeader",
         "title": "Check SQL Header",
-        "category": "Synapse SQL Parser"
+        "category": "file"
       },
       {
         "command": "extension.openQueryInNewTab",
         "title": "Open Query in New Tab",
-        "category": "Synapse SQL Parser"
+        "category": "file"
       },
       {
         "command": "extension.saveToJson",
         "title": "Save to JSON",
-        "category": "Synapse SQL Parser"
+        "category": "file"
+      },
+      {
+        "command": "extension.setFolderPath",
+        "title": "Set Synapse sqlscripts folder path",
+        "category": "setup"
+      },
+      {
+        "command": "extension.getFolderPath",
+        "title": "Get Synapse sqlscripts folder path",
+        "category": "setup"
       }
     ],
     "keybindings": [
@@ -51,7 +61,25 @@
         "mac": "cmd+alt+s",
         "when": "editorTextFocus"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "meineExtensionAnsicht",
+          "title": "Synapse SQL Parser",
+          "icon": "./src/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "meineExtensionAnsicht": [
+        {
+          "id": "myFolderTreeView",
+          "name": "Hauptansicht",
+          "when": "true"
+        }
+      ]
+    }
   },
   "scripts": {
     "lint": "eslint .",
