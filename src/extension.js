@@ -1,10 +1,9 @@
 const vscode = require('vscode');
 const commands = require('./commands');
 const utils = require('./utils');
-const FolderTreeDataProvider = require('./views/mainView');
+const provider = require('./providers');
 
 let originalJsonUri;
-let folderPath;
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -55,11 +54,10 @@ async function activate(context) {
 
 	if (folderPath) {
 		vscode.window.showInformationMessage('Folder path is set to: ' + folderPath);
-		const folderTreeDataProvider = new FolderTreeDataProvider(folderPath);
+		const folderTreeDataProvider = new provider.folderTreeDataProvider(folderPath);
 		vscode.window.createTreeView('myFolderTreeView', {
 			treeDataProvider: folderTreeDataProvider
 		});
-
 	}
 
 	context.subscriptions.push(disposable);
