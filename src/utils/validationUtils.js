@@ -4,8 +4,8 @@
  * @returns {boolean}
  */
 function headerExists(sqlText) {
-    const headerLine1 = "/* Dieser SQL-Query wurde aus einer JSON-Datei generiert    */";
-    const headerLine2 = "/* mit Hilfe der vscode-Erweiterung azure-synapse-studio-sql */";
+    const headerLine1 = "/* This SQL query was generated from a JSON file            */";
+    const headerLine2 = "/* using the vscode extension azure-synapse-studio-sql      */";
 
     return sqlText.includes(headerLine1) && sqlText.includes(headerLine2);
 }

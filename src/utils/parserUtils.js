@@ -11,7 +11,7 @@ function parseSqlCommentsToMetadata(sqlText) {
     const metadata = {};
 
     lines.forEach(line => {
-        if (line.includes('Original JSON-Datei:')) {
+        if (line.includes('Original JSON File:')) {
             metadata.originalFilePath = line.split(': ')[1].trim();
         } else if (line.includes('Name:')) {
             metadata.name = line.split(': ')[1].trim();

@@ -16,12 +16,12 @@ function generateSqlComment(jsonContent, originalJsonUri) {
 
     const comment = `
 /************************************************************/
-/* Dieser SQL-Query wurde aus einer JSON-Datei generiert    */
-/* mit Hilfe der vscode-Erweiterung azure-synapse-studio-sql */
+/* This SQL query was generated from a JSON file            */
+/* using the vscode extension azure-synapse-studio-sql      */
 /************************************************************/
 /*
-    --- JSON-Informationen ---
-    Original JSON-Datei: ${relativePath}
+    --- JSON Information ---
+    Original JSON File: ${relativePath}
     Name: ${jsonContent.name}
     Folder: ${jsonContent.properties.folder.name}
     Type: ${jsonContent.properties.type}
