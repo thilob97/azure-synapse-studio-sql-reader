@@ -9,7 +9,8 @@ The Synapse SQL JSON Reader is a Visual Studio Code extension that enhances work
 - **Save to JSON**: Enables you to save modifications made to SQL queries back into the original JSON file, ensuring that your changes are preserved and the document remains up-to-date.
 - **Set Synapse sqlscripts Folder Path**: Configure the folder path for Synapse SQL scripts, allowing the extension to efficiently locate and manage SQL JSON files.
 - **Get Synapse sqlscripts Folder Path**: Retrieve the currently configured path for Synapse SQL scripts, ensuring your environment is set up correctly.
-- **Auto detect Synapse JSON**: Automatically identifying JSON documents containing SQL queries
+- **Auto detect Synapse JSON**: Automatically identifying JSON documents containing SQL queries.
+![auto detect JSON](./src/assets/autoDetectDemo.gif)
 
 ## Getting Started
 
@@ -41,3 +42,22 @@ We hope the Synapse SQL JSON Reader makes managing your SQL queries within JSON 
 
 - [Azure Synapse Analytics](https://azure.microsoft.com/en-us/services/synapse-analytics/)
 - [Visual Studio Code](https://code.visualstudio.com/)
+
+## [Unreleased]
+
+- 
+
+## [0.2.0] 2024-02-18 
+### Breaking
+ 
+ - Language change of the header generator to english 
+
+ ## Added
+
+ - activity bar icon 
+    - tree view JSON parser 
+    - parse JSON to Synapse SQL view
+
+## [0.1.0]
+
+- restructuring

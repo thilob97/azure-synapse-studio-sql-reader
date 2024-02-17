@@ -67,7 +67,7 @@
         {
           "id": "meineExtensionAnsicht",
           "title": "Synapse SQL Parser",
-          "icon": "./src/logo.svg"
+          "icon": "./src/assets/logo.svg"
         }
       ]
     },
@@ -101,5 +101,5 @@
     "url": "https://github.com/thilob97/azure-synapse-studio-sql-reader"
   },
   "publisher": "ThiloBarth",
-  "icon": "./src/logo.png"
+  "icon": "./src/assets/logo.png"
 }
