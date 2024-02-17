@@ -2,7 +2,7 @@
   "name": "azure-synapse-studio-sql",
   "displayName": "Synapse SQL JSON reader",
   "description": "Enhances Azure Synapse Studio workflows by providing tools for editing and managing SQL queries within JSON files.",
-  "version": "0.1.8",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.86.0"
   },
